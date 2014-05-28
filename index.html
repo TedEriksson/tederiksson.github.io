@@ -17,7 +17,6 @@ body, html {
 
 .left {
 	float: left;
-	border-right: 1px solid #444;
 	background: #eee;
 	width: 300px;
 	overflow-y: auto;
@@ -173,12 +172,12 @@ h1::before {
 
 .page.active {
 	left:0px;
-	-webkit-transition: all 500ms, left 500ms 500ms;
+	-webkit-transition: all 500ms, left 500ms 0ms;
 }
 
 .pages.hidden .page.active {
 	-webkit-transition: all 500ms, left 500ms 0ms;
-  left:-250px;
+  	left:-250px;
 }
 
 .pages {
