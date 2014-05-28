@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ted Eriksson</title>
+	<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:200,400' rel='stylesheet' type='text/css'>
+	<style>
+body, html {
+	margin: 0;
+	height: 100%;
+	font-family: 'Source Code Pro' ;
+	color: #444;
+}
+
+.con {
+	height: 100%;
+}
+
+.left {
+	float: left;
+	border-right: 1px solid #444;
+	background: #eee;
+	width: 300px;
+}
+
+.right {
+	position: relative;
+	margin-left: 300px;
+	width: auto;
+	background: #888;
+	overflow: hidden;
+}
+
+.container {
+	padding: 10px;
+	width: auto;
+}
+
+.logo {
+
+	cursor: pointer;
+	font-size: 50px;
+	font-weight: 200;
+	color: #fff;
+	padding: 10px;
+}
+
+span {
+	background: #444;
+	color: #fff;
+	padding: 5px;
+	z-index: 2;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+ul > li {
+	padding: 10px;
+	font-size: 16px;
+}
+
+[page] {
+	cursor: pointer;
+}
+
+.box {
+	margin-top: 4px;
+	width: 0;
+	height: 0;
+	border: 0;
+	border-top: 1px solid #444;
+
+	overflow: hidden;
+
+	-webkit-transition: all 250ms, height 250ms 250ms, border-bottom 0ms 250ms;
+}
+
+li:hover > .box, li.active > .box {
+	border: 1px solid #444;
+	width: 100%;
+	height: 100px;
+}
+
+a {
+	text-decoration: underline;
+	color: #777;
+}
+
+p {
+	position: relative;
+	color: #888;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin: 10px;
+	line-height: 20px;
+
+	font-size: 16px;
+	font-weight: 400;
+}
+
+p::before {
+	position: absolute;
+	color: #888;
+	content:"/*";
+	top: 0;
+	left: 0;
+}
+
+p::after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #888;
+	content:"*/";
+}
+
+h1 {
+	font-size: 26px;
+	font-weight: 400;
+	color: #888;
+
+	padding-left: 10px;
+}
+
+h1::before {
+	color: #888;
+	content:"//";
+}
+
+.page {
+	position: absolute;
+	left: -300px;
+	padding: 10px;
+	-webkit-transition: all 500ms, left 500ms;
+}
+
+.page.active {
+	left:0px;
+	-webkit-transition: all 500ms, left 500ms 250ms;
+}
+
+.pages {
+	background: none;
+	border: 0;
+	overflow: hidden;
+}
+
+.pages .page {
+	width: 280px;
+	height: 100%;
+	background: #eee;
+}
+
+.container > ul > li {
+	padding-top: 0;
+	font-size: 20px;
+}
+
+	</style>
+</head>
+<body>
+<div class="con left">
+<div class="container">
+<div class="logo" page="home"><span>
+Ted</span> <span>Eriksson</span>
+</div>
+<ul>
+<li>
+	Work
+	<ul>
+		<li page="tedswebs">
+			<span>Ted's Webs</span>
+			<div class="box">
+				<p>
+				Copyright 2014
+				<a href="http://tedswebs.co.uk" target="_blank">http://tedswebs.co.uk</a>
+				</p>
+				
+			</div>
+		</li>
+		<li page="shy">
+			<span>Shy Aviation</span>
+			<div class="box">
+				<p>
+				Copyright 2014
+				</p>
+			</div>
+		</li>
+		<li>
+			<span>Fotobox</span>
+			<div class="box">
+				<p>
+				Copyright 2014
+				</p>
+			</div>
+		</li>
+		<li>
+			<span>Millie Maidens</span>
+			<div class="box">
+				<p>
+				Copyright 2014
+				</p>
+			</div>
+		</li>
+	</ul>
+	<li>Play</li>
+</ul>
+</div>
+</div>
+<div class="con right">
+	<div class="con left pages">
+		<div id="home" class="page active">
+			<h1>Welcome</h1>
+			<p>
+			Click an item on the left to view more.
+			</p>
+		</div>
+		<div id="tedswebs" class="page">
+			<h1>Teds Webs</h1>
+			<p>
+			TedsWebs
+			</p>
+		</div>
+		<div id="shy" class="page">
+			<h1>Shy Aviation</h1>
+			<p>
+			shy
+			</p>
+		</div>
+	</div>
+	<div id="images" class="con right">
+	</div>
+</div>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready( function () {
+		$('[page]').bind("click", function () {
+			var page = $(this).attr('page');
+			$('li').removeClass('active');
+			$('.page').removeClass('active');
+			$(this).addClass('active');
+			$('#'+page).addClass('active');
+		});
+	});
+</script>
+</body>
+</html>
