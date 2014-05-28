@@ -91,13 +91,6 @@ li:hover > .box {
 	width: 240px;
 }
 
-li.active > .box {
-	border: 1px solid #444;
-	width: 240px;
-	height: 100px;
-	-webkit-transition: all 250ms, height 250ms 250ms, border-bottom 0ms 250ms;
-}
-
 ul > li:first-child > .box {
   border: 1px solid #C95E16;
   border-bottom:0;
@@ -106,6 +99,21 @@ ul > li:first-child > .box {
 
 ul > li.active:first-child > .box {
   border: 1px solid #C95E16;
+}
+
+li.active > .box {
+	border: 1px solid #BD3D2F;
+	width: 240px;
+	height: 100px;
+	-webkit-transition: all 250ms, height 250ms 250ms, border-bottom 0ms 250ms;
+}
+
+li > span {
+	-webkit-transition: all 250ms;
+}
+
+li.active > span, ul > li.active:first-child > span {
+	background: #BD3D2F
 }
 
 a {
