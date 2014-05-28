@@ -20,6 +20,7 @@ body, html {
 	border-right: 1px solid #444;
 	background: #eee;
 	width: 300px;
+	overflow-y: auto;
 }
 
 .right {
@@ -32,6 +33,7 @@ body, html {
 
 .container {
 	padding: 10px;
+	padding-bottom:0;
 	width: auto;
 }
 
@@ -65,27 +67,46 @@ ul > li {
 	cursor: pointer;
 }
 
+ul > li:first-child > span {
+  background: #C95E16;
+}
+
 .box {
 	margin-top: 4px;
 	width: 0;
 	height: 0;
-	border: 0;
-	border-top: 1px solid #444;
-
+	border: 1px solid #444;
+  border-bottom:0;
+  border-left:0;
 	overflow: hidden;
 
-	-webkit-transition: all 250ms, height 250ms 250ms, border-bottom 0ms 250ms;
+	-webkit-transition: all 250ms, height 250ms 250ms, border-bottom 0ms 500ms;
+}
+
+.box > p {
+  width: 240px;
 }
 
 li:hover > .box {
 	border-top: 1px solid #444;
-	width: 100%;
+	width: 240px;
 }
 
 li.active > .box {
 	border: 1px solid #444;
-	width: 100%;
+	width: 240px;
 	height: 100px;
+	-webkit-transition: all 250ms, height 250ms 250ms, border-bottom 0ms 250ms;
+}
+
+ul > li:first-child > .box {
+  border: 1px solid #C95E16;
+  border-bottom:0;
+  border-left:0;
+}
+
+ul > li.active:first-child > .box {
+  border: 1px solid #C95E16;
 }
 
 a {
@@ -126,29 +147,44 @@ h1 {
 	font-weight: 400;
 	color: #888;
 
-	padding-left: 10px;
+	padding-left: 45px;
 }
 
 h1::before {
 	color: #888;
+	position: absolute;
+	left:20px;
 	content:"//";
 }
 
 .page {
 	position: absolute;
-	left: -300px;
+	left: -315px;
 	padding: 10px;
+	padding-bottom:0;
+	padding-top:0;
+	box-shadow: 5px 0px 10px rgba(0,0,0,0.2);
 	-webkit-transition: all 500ms, left 500ms;
+}
+
+.page#empty {
+  left:-300px;
 }
 
 .page.active {
 	left:0px;
-	-webkit-transition: all 500ms, left 500ms 250ms;
+	-webkit-transition: all 500ms, left 500ms 500ms;
+}
+
+.pages.hidden .page.active {
+	-webkit-transition: all 500ms, left 500ms 0ms;
+  left:-250px;
 }
 
 .pages {
 	background: none;
 	border: 0;
+	width:300px;
 	overflow: hidden;
 }
 
@@ -156,6 +192,12 @@ h1::before {
 	width: 280px;
 	height: 100%;
 	background: #eee;
+	overflow-y: auto;
+}
+
+.container > ul {
+  margin:0;
+  margin-top: 10px;
 }
 
 .container > ul > li {
@@ -163,67 +205,187 @@ h1::before {
 	font-size: 20px;
 }
 
+#images {
+  position: absolute;
+  width: auto;
+  top:0;
+  height:100%;
+  width:100%;
+}
+
+#images .loading {
+  position: absolute;
+  width: inherit;
+  height: 100%;
+  background: #aaa;
+  opacity: 0;
+  -webkit-transition: all 400ms 400ms;
+}
+
+#images[data-loading] .loading {
+  opacity: 1;
+  -webkit-transition: all 400ms 0ms;
+}
+
+#images div {
+  width:100%;
+  height:100%;
+  position: absolute;
+  background-size: 100% auto;
+}
+
+.hidetoggle {
+  position: fixed;
+  bottom: 5px;
+  /*left: 250px;*/
+  opacity:0.5;
+  -webkit-transition: opacity 150ms;
+}
+
+.hidetoggle:hover {
+  opacity:1;
+  cursor:pointer;
+}
+
+@-webkit-keyframes left {
+  from {
+    left:0;
+  }
+  to {
+    left:-200px;
+  }
+}
+
+@-webkit-keyframes right {
+  from {
+    left:-200px;
+  }
+  to {
+    left:0;
+  }
+}
+
 	</style>
 </head>
 <body>
 <div class="con left">
 <div class="container">
-<div class="logo" page="home"><span>
-Ted</span> <span>Eriksson</span>
-</div>
-<ul>
-<li>
-	Work
-	<ul>
-		<li page="tedswebs">
-			<span>Ted's Webs</span>
-			<div class="box">
-				<p>
-				Copyright 2014
-				<a href="http://tedswebs.co.uk" target="_blank">http://tedswebs.co.uk</a>
-				</p>
-				
-			</div>
-		</li>
-		<li page="shy">
-			<span>Shy Aviation</span>
-			<div class="box">
-				<p>
-				Copyright 2014
-				</p>
-			</div>
-		</li>
-		<li>
-			<span>Fotobox</span>
-			<div class="box">
-				<p>
-				Copyright 2014
-				</p>
-			</div>
-		</li>
-		<li>
-			<span>Millie Maidens</span>
-			<div class="box">
-				<p>
-				Copyright 2014
-				</p>
-			</div>
-		</li>
-	</ul>
-	<li>Play</li>
-</ul>
+  <div class="logo" page="home"><span>
+  Ted</span> <span>Eriksson</span>
+  </div>
+  <ul>
+  <li>
+  	Work
+  	<ul>
+  		<li page="tedswebs">
+  			<span>Ted's Webs</span>
+  			<div class="box">
+  				<p>
+  				Copyright 2014
+  				<a href="http://tedswebs.co.uk" target="_blank">tedswebs.co.uk</a>
+  				</p>
+  			</div>
+  		</li>
+  		<li page="shy">
+  			<span>Shy Aviation</span>
+  			<div class="box">
+  				<p>
+  				Completed 2014<br>
+  				In-house App
+  				</p>
+  			</div>
+  		</li>
+  		<li page="fotobox">
+  			<span>Fotobox</span>
+  			<div class="box">
+  				<p>
+  				Completed 2013
+  				<a href="http://www.fotobox.co.uk/" target="_blank">fotobox.co.uk</a>
+  				</p>
+  			</div>
+  		</li>
+  	</ul>
+  	<li>University
+  	  <ul>
+  	    <li page="poi">
+    			<span>Points of Interest</span>
+    			<div class="box">
+    				<p>
+    				Copyright 2014
+    				<a href="http://pointsofinterest.info/" target="_blank">pointsofinterest.info</a>
+    				</p>
+    			</div>
+    		</li>
+    		<li page="follow">
+    			<span>Follow Your Routes</span>
+    			<div class="box">
+    				<p>
+    				Copyright 2014
+    				<a href="https://github.com/TedEriksson/FollowYourRoutes" target="_blank">/FollowYourRoutes</a>
+    				</p>
+    			</div>
+    		</li>
+    		<li page="reversi">
+    			<span>Reversi</span>
+    			<div class="box">
+    				<p>
+    				Copyright 2013<br>
+    				<a href="https://github.com/TedEriksson/Reversi" target="_blank">/Reversi</a>
+    				</p>
+    			</div>
+    		</li>
+    		<li page="reversipc">
+    			<span>Reversi PC</span>
+    			<div class="box">
+    				<p>
+    				Copyright 2013
+    				<a href="https://github.com/TedEriksson/ReversiPC" target="_blank">/ReversiPC</a>
+    				</p>
+    			</div>
+    		</li>
+  	  </ul>
+  	</li>
+  	<li>Play
+  	  <ul>
+  	    <li page="moba">
+    			<span>A Mobile MOBA</span>
+    			<div class="box">
+    				<p>
+    				Copyright 2014
+    				<a href="http://tederiksson.github.io/MobileMOBA/" target="_blank">/MobileMOBA</a>
+    				</p>
+    			</div>
+    		</li>
+  	  </ul>
+  	</li>
+  </ul>
+  <p>
+    Copyright Ted Eriksson 2014
+  </p>
 </div>
 </div>
 <div class="con right">
-	<div class="con left pages">
+	<div id="images" class="">
+    <div class="i"></div>
+	  <div class="loading"></div>
+	</div>
+
+	<div class="con pages">
 		<div id="home" class="page active">
 			<h1>Welcome</h1>
 			<p>
 			Click an item on the left to view more.
 			</p>
+			<h1>My Skills</h1>
+			<p>
+			  PHP<br>
+			  Android<br>
+			  Javascript/JQuery<br>
+			  HTML5 CSS3
+			</p>
 		</div>
 		<div id="tedswebs" class="page">
-			<h1>Teds Webs</h1>
+			<h1>Ted's Webs</h1>
 			<p>
 			TedsWebs
 			</p>
@@ -234,21 +396,85 @@ Ted</span> <span>Eriksson</span>
 			shy
 			</p>
 		</div>
-	</div>
-	<div id="images" class="con right">
+		<div id="fotobox" class="page">
+			<h1>Fotobox</h1>
+			<p>
+			shy
+			</p>
+		</div>
+		<div id="poi" class="page">
+			<h1>Points of Interest</h1>
+			<p>
+			shy
+			</p>
+		</div>
+		<div id="follow" class="page">
+			<h1>Follow Your Routes</h1>
+			<p>
+			shy
+			</p>
+		</div>
+		<div id="reversi" class="page">
+			<h1>Reversi</h1>
+			<p>
+			shy
+			</p>
+		</div>
+		<div id="reversipc" class="page">
+			<h1>Reversi PC</h1>
+			<p>
+			shy
+			</p>
+		</div>
+		<div id="empty" class="page">
+		</div>
+		<div class="hidetoggle"><span>Hide</span></div>
 	</div>
 </div>
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+<script src="jquery.imageloader.js"></script>
 <script type="text/javascript">
 	$(document).ready( function () {
+	  loadImages('home');
+	  
 		$('[page]').bind("click", function () {
 			var page = $(this).attr('page');
 			$('li').removeClass('active');
 			$('.page').removeClass('active');
 			$(this).addClass('active');
 			$('#'+page).addClass('active');
+			
+			loadImages(page);
 		});
+		
+		$('.hidetoggle').bind("click", function () {
+		  if(!$('.pages').hasClass('hidden')) {
+		    $('.pages').addClass('hidden');
+		    $(this).children().text('Show');
+		  } else {
+		    $('.pages').removeClass('hidden');
+		    $(this).children().text('Hide');
+		  }
+		});
+		
+		function loadImages(page) {
+		  $('#images').attr('data-loading','')
+		  window.setTimeout(function() {
+        $('#images .i').each( function(index) {
+          $(this).imageloader({
+    		    background: true,
+    		    callback: function(elm) {
+    		      console.log('loaded');
+    		      $(elm).css('background-image','url(img/'+page+'/'+index+'.png)');
+                $(elm).parent().removeAttr('data-loading');
+  		      }
+  		    });
+        });
+        }, 400);
+		  
+  		// $(this).css('background-image','url(img/'+page+'/'+index+'.png)');
+		}
 	});
 </script>
 </body>
