@@ -9,6 +9,7 @@ body, html {
 	height: 100%;
 	font-family: 'Source Code Pro' ;
 	color: #444;
+	background: url(img/noisy_grid.png);
 }
 
 .con {
@@ -26,7 +27,7 @@ body, html {
 	position: relative;
 	margin-left: 300px;
 	width: auto;
-	background: #888;
+	/*background: #888;*/
 	overflow: hidden;
 }
 
@@ -52,6 +53,10 @@ span {
 	z-index: 2;
 }
 
+.logo span {
+	-webkit-transition: all 250ms;
+}
+
 ul {
 	list-style: none;
 	padding-left: 0;
@@ -75,8 +80,8 @@ ul > li:first-child > span {
 	width: 0;
 	height: 0;
 	border: 1px solid #444;
-  border-bottom:0;
-  border-left:0;
+	border-bottom:0;
+	border-left:0;
 	overflow: hidden;
 
 	-webkit-transition: all 250ms, height 250ms 250ms, border-bottom 0ms 500ms;
@@ -112,7 +117,7 @@ li > span {
 	-webkit-transition: all 250ms;
 }
 
-li.active > span, ul > li.active:first-child > span {
+li.active > span, ul > li.active:first-child > span, .logo.active span {
 	background: #BD3D2F
 }
 
@@ -234,6 +239,10 @@ h1::before {
   -webkit-transition: all 400ms 0ms;
 }
 
+#images .i {
+	background-repeat: no-repeat;
+}
+
 #images div {
   width:100%;
   height:100%;
@@ -270,6 +279,28 @@ h1::before {
   to {
     left:0;
   }
+}
+
+.platform {
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+.platform > span{
+	padding: 5px;
+	margin-left: 10px;
+}
+
+.platform.web span {
+	background: #2584B8;
+}
+
+.platform.android span {
+	background: #26B54A;
+}
+
+.platform.pc span {
+	background: #8C2EC7;
 }
 
 	</style>
@@ -393,44 +424,59 @@ h1::before {
 		</div>
 		<div id="tedswebs" class="page">
 			<h1>Ted's Webs</h1>
+			<div class="platform web"><span>Web</span></div>
 			<p>
-			TedsWebs
+			Ted's Webs is my web design company.<br>This site was created with the goal of trying to recreate an Android Kitkat style site with my own touch.
 			</p>
 		</div>
 		<div id="shy" class="page">
 			<h1>Shy Aviation</h1>
+			<div class="platform web"><span>Web</span></div>
 			<p>
 			shy
 			</p>
 		</div>
 		<div id="fotobox" class="page">
 			<h1>Fotobox</h1>
+			<div class="platform web"><span>Web</span></div>
 			<p>
 			shy
 			</p>
 		</div>
 		<div id="poi" class="page">
 			<h1>Points of Interest</h1>
+			<div class="platform web"><span>Web</span></div>
+			<div class="platform android"><span>Android</span></div>
 			<p>
 			shy
 			</p>
 		</div>
 		<div id="follow" class="page">
 			<h1>Follow Your Routes</h1>
+			<div class="platform android"><span>Android</span></div>
 			<p>
 			shy
 			</p>
 		</div>
 		<div id="reversi" class="page">
 			<h1>Reversi</h1>
+			<div class="platform android"><span>Android</span></div>
 			<p>
 			shy
 			</p>
 		</div>
 		<div id="reversipc" class="page">
 			<h1>Reversi PC</h1>
+			<div class="platform pc"><span>PC</span></div>
 			<p>
 			shy
+			</p>
+		</div>
+		<div id="moba" class="page">
+			<h1>A Mobile MOBA</h1>
+			<div class="platform android"><span>Android</span></div>
+			<p>
+			Work in progress
 			</p>
 		</div>
 		<div id="empty" class="page">
@@ -447,8 +493,7 @@ h1::before {
 	  
 		$('[page]').bind("click", function () {
 			var page = $(this).attr('page');
-			$('li').removeClass('active');
-			$('.page').removeClass('active');
+			$('li, .logo, .page').removeClass('active');
 			$(this).addClass('active');
 			$('#'+page).addClass('active');
 			
