@@ -55,6 +55,9 @@ span {
 
 .logo span {
 	-webkit-transition: all 250ms;
+	-ms-transition: all 250ms;
+	-moz-transition: all 250ms;
+	-o-transition: all 250ms;
 }
 
 ul {
@@ -85,6 +88,9 @@ ul > li:first-child > span {
 	overflow: hidden;
 
 	-webkit-transition: all 250ms, height 250ms 250ms, border-bottom 0ms 500ms;
+	-ms-transition: all 250ms, height 250ms 250ms, border-bottom 0ms 500ms;
+	-moz-transition: all 250ms, height 250ms 250ms, border-bottom 0ms 500ms;
+	-o-transition: all 250ms, height 250ms 250ms, border-bottom 0ms 500ms;
 }
 
 .box > p {
@@ -111,10 +117,16 @@ li.active > .box {
 	width: 240px;
 	height: 100px;
 	-webkit-transition: all 250ms, height 250ms 250ms, border-bottom 0ms 250ms;
+	-ms-transition: all 250ms, height 250ms 250ms, border-bottom 0ms 250ms;
+	-moz-transition: all 250ms, height 250ms 250ms, border-bottom 0ms 250ms;
+	-o-transition: all 250ms, height 250ms 250ms, border-bottom 0ms 250ms;
 }
 
 li > span {
 	-webkit-transition: all 250ms;
+	-ms-transition: all 250ms;
+	-moz-transition: all 250ms;
+	-o-transition: all 250ms;
 }
 
 li.active > span, ul > li.active:first-child > span, .logo.active span {
@@ -177,6 +189,9 @@ h1::before {
 	padding-top:0;
 	box-shadow: 5px 0px 10px rgba(0,0,0,0.2);
 	-webkit-transition: all 500ms, left 500ms;
+	-ms-transition: all 500ms, left 500ms;
+	-moz-transition: all 500ms, left 500ms;
+	-o-transition: all 500ms, left 500ms;
 }
 
 .page#empty {
@@ -186,10 +201,16 @@ h1::before {
 .page.active {
 	left:0px;
 	-webkit-transition: all 500ms, left 500ms 0ms;
+	-ms-transition: all 500ms, left 500ms 0ms;
+	-moz-transition: all 500ms, left 500ms 0ms;
+	-o-transition: all 500ms, left 500ms 0ms;
 }
 
 .pages.hidden .page.active {
 	-webkit-transition: all 500ms, left 500ms 0ms;
+	-ms-transition: all 500ms, left 500ms 0ms;
+	-moz-transition: all 500ms, left 500ms 0ms;
+	-o-transition: all 500ms, left 500ms 0ms;
   	left:-250px;
 }
 
@@ -232,11 +253,17 @@ h1::before {
   background: #aaa;
   opacity: 0;
   -webkit-transition: all 400ms 400ms;
+  -ms-transition: all 400ms 400ms;
+  -moz-transition: all 400ms 400ms;
+  -o-transition: all 400ms 400ms;
 }
 
 #images[data-loading] .loading {
   opacity: 1;
   -webkit-transition: all 400ms 0ms;
+  -ms-transition: all 400ms 0ms;
+  -moz-transition: all 400ms 0ms;
+  -o-transition: all 400ms 0ms;
 }
 
 #images .i {
@@ -253,32 +280,16 @@ h1::before {
 .hidetoggle {
   position: fixed;
   bottom: 5px;
-  /*left: 250px;*/
   opacity:0.5;
   -webkit-transition: opacity 150ms;
+  -ms-transition: opacity 150ms;
+  -moz-transition: opacity 150ms;
+  -o-transition: opacity 150ms;
 }
 
 .hidetoggle:hover {
   opacity:1;
   cursor:pointer;
-}
-
-@-webkit-keyframes left {
-  from {
-    left:0;
-  }
-  to {
-    left:-200px;
-  }
-}
-
-@-webkit-keyframes right {
-  from {
-    left:-200px;
-  }
-  to {
-    left:0;
-  }
 }
 
 .platform {
@@ -319,7 +330,7 @@ h1::before {
   			<span>Ted's Webs</span>
   			<div class="box">
   				<p>
-  				Copyright 2014
+  				Copyright 2014<br>
   				<a href="http://tedswebs.co.uk" target="_blank">tedswebs.co.uk</a>
   				</p>
   			</div>
@@ -337,7 +348,7 @@ h1::before {
   			<span>Fotobox</span>
   			<div class="box">
   				<p>
-  				Completed 2013
+  				Completed 2013<br>
   				<a href="http://www.fotobox.co.uk/" target="_blank">fotobox.co.uk</a>
   				</p>
   			</div>
@@ -349,7 +360,7 @@ h1::before {
     			<span>Points of Interest</span>
     			<div class="box">
     				<p>
-    				Copyright 2014
+    				Copyright 2014<br>
     				<a href="http://pointsofinterest.info/" target="_blank">pointsofinterest.info</a>
     				</p>
     			</div>
@@ -358,7 +369,7 @@ h1::before {
     			<span>Follow Your Routes</span>
     			<div class="box">
     				<p>
-    				Copyright 2014
+    				Copyright 2014<br>
     				<a href="https://github.com/TedEriksson/FollowYourRoutes" target="_blank">/FollowYourRoutes</a>
     				</p>
     			</div>
@@ -376,7 +387,7 @@ h1::before {
     			<span>Reversi PC</span>
     			<div class="box">
     				<p>
-    				Copyright 2013
+    				Copyright 2013<br>
     				<a href="https://github.com/TedEriksson/ReversiPC" target="_blank">/ReversiPC</a>
     				</p>
     			</div>
@@ -389,7 +400,7 @@ h1::before {
     			<span>A Mobile MOBA</span>
     			<div class="box">
     				<p>
-    				Copyright 2014
+    				Copyright 2014<br>
     				<a href="http://tederiksson.github.io/MobileMOBA/" target="_blank">/MobileMOBA</a>
     				</p>
     			</div>
@@ -433,14 +444,18 @@ h1::before {
 			<h1>Shy Aviation</h1>
 			<div class="platform web"><span>Web</span></div>
 			<p>
-			shy
+			A management system that tracks private charter air hire.<br>
+			I played the role of project manager and designer.<br>
+			Botond Butuza did 99% of the back-end coding.
 			</p>
 		</div>
 		<div id="fotobox" class="page">
 			<h1>Fotobox</h1>
 			<div class="platform web"><span>Web</span></div>
 			<p>
-			shy
+			Fotobox.co.uk is a simple company website.<br>
+			The idea was to bring their image up to date with a fresh look using the latest web standards (CSS3, HTML5). The website has a small PHP backend.<br>
+			The website was designed in sections and those sections were divided up into the types of service they are. A simple scroll spy is used to track where the user is on the page and keeps the current section nav item selected.
 			</p>
 		</div>
 		<div id="poi" class="page">
@@ -448,28 +463,32 @@ h1::before {
 			<div class="platform web"><span>Web</span></div>
 			<div class="platform android"><span>Android</span></div>
 			<p>
-			shy
+			My disertation project.<br>
+			Poi is a 'points of interest' Android app that utilises a RESTful web server to store and retrieve points.
 			</p>
 		</div>
 		<div id="follow" class="page">
 			<h1>Follow Your Routes</h1>
 			<div class="platform android"><span>Android</span></div>
 			<p>
-			shy
+			A piece of coursework for university.<br>
+			The Android app tracks running routes and allows them to be shared with others.
 			</p>
 		</div>
 		<div id="reversi" class="page">
 			<h1>Reversi</h1>
 			<div class="platform android"><span>Android</span></div>
 			<p>
-			shy
+			A piece of coursework for university.<br>
+			This is my first ever Android app. It features: 2 Player mode, a very simple AI for Player vs CPU mode, Highscores and Contacts (with images) as player names.
 			</p>
 		</div>
 		<div id="reversipc" class="page">
 			<h1>Reversi PC</h1>
 			<div class="platform pc"><span>PC</span></div>
 			<p>
-			shy
+			Created in processing using the P3D renderer.<br>
+			This Reversi implementation features: A 3D game board, music and a basic AI.
 			</p>
 		</div>
 		<div id="moba" class="page">
