@@ -12,6 +12,7 @@ h1 {
 	font-weight: 200;
 	margin: 0; 
 	font-size: 35px;
+	line-height: 53px;
 }
 
 span {
@@ -19,11 +20,6 @@ span {
 	color: #eee;
 	padding: 5px;
 	margin-bottom: 5px;
-}
-
-span:not(:first-child) {
-	position: relative;
-	top: 5px;
 }
 
 .profile {
@@ -42,6 +38,8 @@ span:not(:first-child) {
 .logo span:last-child {
 	display: block;
 	width: auto;	
+	position: relative;
+	top: 5px;
 }
 
 .me {
@@ -69,9 +67,12 @@ ul li:first-child {
 	margin-top: 0;
 }
 
+ul li a {
+	line-height: 30px;
+}
+
 a {
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 2px;
 	display: block;
 	text-decoration: none;
 	border-bottom: 1px solid #444;
@@ -129,6 +130,14 @@ a:hover span {
 	line-height: 35px;
 }
 
+.content p span {
+	line-height: 25px;
+}
+
+.content p a span {
+	line-height: 30px;
+}
+
 .content p > a {
 	margin-top: 20px;
 }
@@ -151,6 +160,25 @@ a:hover span {
 
 .shy {
 	background: url("img/shy/0.png");
+}
+
+.image.blog {
+	display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  align-items: center;
+}
+
+.image.blog > div {
+	padding: 20px;
+}
+
+.image.blog span {
+	font-size: 50px;
+	line-height: 70px;
 }
 
 span.css  {
@@ -233,9 +261,12 @@ span.js {
 	}
 
 	.stream .item .image {
-		display: block;
 		width: 100%;
 		height: 300px;
+	}
+
+	.stream .item .image:not(.blog) {
+		display: block;
 	}
 
 	.stream .item {
