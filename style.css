@@ -162,6 +162,10 @@ a:hover span {
 	background: url("img/shy/0.png");
 }
 
+.wordbox {
+	background: url("img/wordbox/icon.png");
+}
+
 .image.blog {
 	display: -webkit-box;
   display: -moz-box;
