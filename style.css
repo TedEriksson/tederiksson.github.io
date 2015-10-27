@@ -166,6 +166,10 @@ a:hover span {
 	background: url("img/wordbox/icon.png");
 }
 
+.pre {
+	background: url("img/pre/app_icon_padded.png");
+}
+
 .image.blog {
 	display: -webkit-box;
   display: -moz-box;
