@@ -1,123 +1,74 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Ted-E</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:200,400' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <title>Ted-E</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,200|Roboto:400,300italic,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-	<div class="container">
-		<div class="about">
-			<div class="profile">
-				<img class="me" src="img/ted.jpg">
-				<div class="logo" page="home"><span>
-			  Ted</span><br><span>Eriksson</span>
-			  </div>
-		  </div>
-		  <ul class="social">
-			  <li>
-				  <span>Software Developer</span>
-				  <br>
-				  <span>At so-sure</span>
-				  <br><br>
-				  <span>London, Uk</span>
-				  <br><br>
-			  </li>
-			  <li><a target="_blank" href="http://kittensandcode.blogspot.co.uk/"><span>Blog</span></a></li>
-			  <li><a target="_blank" href="https://twitter.com/Ted_Eriksson"><span>Twitter</span></a></li>
-			  <li><a target="_blank" href="https://plus.google.com/u/0/112737120676202041697"><span>Google+</span></a></li>
-		  </ul>
-		  <ul>
-		  	<li><span class="android">Android</span></li>
-		  	<li><span class="ruby">Ruby on Rails</span></li>
-		  	<li><span class="php">PHP</span></li>
-		  	<li><span class="html">HTML5</span></li>
-		  	<li><span class="css">CSS3</span></li>
-		  	<li><span class="js">Javascript/jQuery</span></li>
-		  </ul>
-		</div>
-	  <div class="stream">
-	  	<div class="item">
-	  		<div class="image vism"></div>
-	  		<div class="content">
-	  			<h1><a target="_blank" href="http://www.vism.co.uk/"><span>VisM</span></a></h1>
-	  			<p>
-	  				<span>Android, iOS and Web design</span>
-	  				<br>
-	  				<br>
-		  			<span>For Enquiries:</span>
-		  			<br>
-		  			<a target="_blank" href="mailto:ted.eriksson@me.com"><span>Email at ted.eriksson@me.com</span></a>
-	  			</p>
-	  		</div>
-	  	</div>
-	  	<div class="item">
-	  		<div class="image pre"></div>
-	  		<div class="content" style="margin-top:20px;">
-	  			<h1><span>Pre</span></h1>
-	  			<p>
-		  			<span>A rolling TODO list. For iOS and Android</span>
-		  			<br>
-		  			<br>
-		  			<span>In development</span>
-	  			</p>
-	  		</div>
-	  	</div>
-	  	<div class="item">
-	  		<div class="image tw"></div>
-	  		<div class="content">
-	  			<h1><a target="_blank" href="http://tedswebs.co.uk/#home"><span>Ted's Webs</span></a></h1>
-	  			<p>
-		  			<span>Founded 2012</span>
-		  			<br>
-		  			<span>Web solutions</span>
-		  			<br>
-		  			<a target="_blank" href="http://tedswebs.co.uk/sophiemewitt/"><span>Example Site</span></a>
-	  			</p>
-	  		</div>
-	  	</div>
-	  	<div class="item">
-	  		<div class="image wordbox"></div>
-	  		<div class="content" style="margin-top:20px;">
-	  			<h1><span>Word Box</span></h1>
-	  			<p>
-		  			<span>iOS and Android app, currently in development</span>
-		  			<br>
-		  			<a target="_blank" href="https://github.com/VISM-uk"><span>Github repo</span></a>
-	  			</p>
-	  		</div>
-	  	</div>
-	  	<div class="item">
-	  		<div class="image shy"></div>
-	  		<div class="content" style="margin-top:20px;">
-	  			<h1><span>Shy Aviation</span></h1>
-	  			<p>
-		  			<span>Bespoke CMS</span>
-	  			</p>
-	  		</div>
-	  	</div>
-	  	<div class="item">
-	  		<div class="image blog">
-	  			<div>
-	  				<span>Kittens</span><br><span>and</span><span>Code</span>
-	  			</div>
-	  		</div>
-	  		<div class="content" style="margin-top:20px;">
-	  			<h1><span>Latest Blog Post</span></h1>
-	  			<p>
-		  			<a target="_blank" href="http://kittensandcode.blogspot.co.uk/"><span id="blog-content"></span></a>
-	  			</p>
-	  			<br>
-	  			<h1><span>Also find me on Medium</span></h1>
-	  			<p>
-		  			<a target="_blank" href="https://medium.com/@Ted_Eriksson"><span>@Ted_Eriksson</span></a>
-	  			</p>
-	  		</div>
-	  	</div>
-	  </div>
-  </div>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script type="text/javascript" src="blog-loader.js"></script>
+    <div class="left">
+    <div class="logo" page="home">
+        <span>Ted</span><br><span>Eriksson</span>
+    </div>
+    <div class="footer">
+        <h1 class="orange">
+            Software Developer
+        </h1>
+        <a href="#">t@erksn.io</a>
+    </div>
+    </div>
+    <div class="right"> 
+        <h1 class="title">Android</h1>
+        <div class="card">
+            <img src="img/sosure.png" />
+            <h1 class="sosure">so-sure</h1>
+            Social Insurance
+            <br>
+            Launched June 2016
+            <br><br>
+            <a href="https://play.google.com/store/apps/details?id=com.wearesosure">Play Store</a>
+        </div>
+        <div class="card">
+            <img src="img/drinkaware.png" />
+            <h1 class="drinkaware">Drinkaware</h1>
+            60,000+ Downloads
+            <br>
+            4 Star Rated
+            <br><br>
+            <a href="https://play.google.com/store/apps/details?id=uk.co.drinkaware">Play Store</a>
+        </div>
+        <div class="card">
+            <img src="img/imagereminders.png" />
+            <h1 class="imagereminders">Image Reminders</h1>
+            Material Design Demo
+            <br>
+            
+            <br><br>
+            <!--<a href="#">Play Store</a>-->
+            <a href="https://github.com/TedEriksson/ImageReminders">GitHub Link</a>
+        </div>
+
+        <h1 class="title">Where to Find Me</h1>
+        <div class="card">
+            <h1 class="github">GitHub</h1>
+            <a href="https://github.com/TedEriksson">TedEriksson</a>
+        </div>
+        <div class="card">
+            <h1 class="medium">Medium</h1>
+            <a href="https://medium.com/@Ted_Eriksson">@Ted_Eriksson</a>
+        </div>
+        <div class="card">
+            <h1 class="stackoverflow">Stack Overflow</h1>
+            <a href="http://stackoverflow.com/users/2750082/ted-eriksson">Ted Eriksson</a>
+        </div>
+        <div class="card">
+            <h1 class="blog">Blog</h1>
+            <a href="http://kittensandcode.blogspot.co.uk">Kittens and Code</a>
+        </div>
+    </div>
 </body>
+
 </html>
