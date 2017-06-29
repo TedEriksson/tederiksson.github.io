@@ -10,6 +10,10 @@ body {
     font-weight: 200;
 }
 
+.none {
+    text-decoration: none;
+}
+
 .logo {
     font-family: 'Source Code Pro', monospace;
     color: #FFF;
@@ -17,6 +21,9 @@ body {
 	font-weight: 200;
 
     margin: 20px;
+}
+
+.left > div:first-child {
     flex: 1;
 }
 
@@ -26,7 +33,7 @@ body {
 }
 
 .left {
-    width: 290px;
+    width: 350px;
 
     position: fixed;
     display: flex;
@@ -39,7 +46,7 @@ body {
     flex-flow: row wrap;
     padding: 20px;
     margin-top: 140px;
-    margin-left: 250px;
+    margin-left: 330px;
     justify-content: flex-start;
 }
 
@@ -53,12 +60,25 @@ body {
     padding: 20px;
     background: #FFF;
     box-shadow: 0px 2px 4px rgba(0,0,0,0.4);
+    border-radius: 2px;
 
     transition: all 400ms;
 }
 
 .card:hover {
     box-shadow: 0px 4px 8px rgba(0,0,0,0.4);
+}
+
+.left .card {
+    width: auto;
+    margin: 40px 20px 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.left .card div {
+    align-self: flex-start;
+    flex: 1;
 }
 
 h1 {
@@ -87,6 +107,14 @@ a {
 
 .orange {
     color: #C95E16;
+}
+
+.citymapper {
+    color: #39AF31;
+}
+
+.bnf {
+    color: #00C1D5;
 }
 
 .sosure {
@@ -122,11 +150,23 @@ img {
     height: 250px;
 }
 
-@media (max-width: 950px) {
+.left img {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+}
+
+.footer div {
+    display: inline-block;
+}
+
+@media (max-width: 1010px) {
     body {
         display: block;
     }
     .left {
+        width: auto;
         position: relative;
         min-height: 0;
     }
@@ -151,5 +191,10 @@ img {
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .left .card {
+        width: auto;
+        margin: 40px 20px 20px 20px;
     }
 }
