@@ -71,7 +71,7 @@ body {
 
 .left .card {
     width: auto;
-    margin: 40px 20px 0 20px;
+    margin: 20px 0;
     display: flex;
     align-items: center;
 }
@@ -96,6 +96,10 @@ h1.title {
     font-size: 28px;
     font-style: normal;
     padding: 20px 20px 0 20px;
+}
+
+.left h1.title {
+    padding: 0;
 }
 
 a {
@@ -152,8 +156,8 @@ img {
 
 .left img {
     display: inline-block;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     margin-right: 20px;
 }
 
@@ -195,6 +199,6 @@ img {
 
     .left .card {
         width: auto;
-        margin: 40px 20px 20px 20px;
+        margin: 20px 0 0 0;
     }
 }
