@@ -1,0 +1,33 @@
+{
+    "projects": [
+        {
+            "id": "citymapper",
+            "title": "Citymapper",
+            "imageUrl": "http://erksn.io/img/citymapper.webp",
+            "textColor": "#39AF31",
+            "backgroundColor": "#39AF31"
+        },
+        {
+            "id": "sosure",
+            "title": "So Sure",
+            "imageUrl": "http://erksn.io/img/sosure.png",
+            "textColor": "#3398FD",
+            "backgroundColor": "#3398FD"
+        },
+        {
+            "id": "bnf",
+            "title": "BNF",
+            "imageUrl": "http://erksn.io/img/bnf.webp",
+            "textColor": "#00C1D5",
+            "backgroundColor": "#00C1D5"
+        },
+        {
+            "id": "drinkaware",
+            "title": "Drinkaware",
+            "imageUrl": "http://erksn.io/img/drinkaware.png",
+            "textColor": "#00AB8E",
+            "backgroundColor": "#FFFFFF"
+        }
+    ]
+}
+
