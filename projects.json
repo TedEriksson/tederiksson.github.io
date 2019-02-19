@@ -5,14 +5,17 @@
             "title": "Citymapper",
             "imageUrl": "http://erksn.io/img/citymapper.webp",
             "textColor": "#39AF31",
-            "backgroundColor": "#39AF31"
+            "backgroundColor": "#39AF31",
+            "appUrl": "https://play.google.com/store/apps/details?id=com.citymapper.app.release"
         },
         {
             "id": "sosure",
             "title": "So Sure",
             "imageUrl": "http://erksn.io/img/sosure.png",
             "textColor": "#3398FD",
-            "backgroundColor": "#3398FD"
+            "backgroundColor": "#3398FD",
+            "tagline": "Better, cheaper, easier.",
+            "appUrl": "https://play.google.com/store/apps/details?id=com.wearesosure"  
         },
         {
             "id": "bnf",
